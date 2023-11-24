@@ -15,8 +15,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Milestone-project-3')
 
-employee = SHEET.worksheet('Sheet1')
+charge = SHEET.worksheet('Sheet1')
 
-data = employee.get_all_values()
+data = charge.get_all_values()
 
 print(data)
