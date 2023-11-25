@@ -23,16 +23,17 @@ print(data)
 print(data2)
 
 
-
 @app.route("/")
 def home():
     return render_template("home.html")
+
 
 @app.route("/reports")
 def reports():
     fy21 = SHEET.worksheet('FY21/22')
     data = fy21.get_all_values()
     return render_template("reports.html", sheet_data=data)
+
 
 @app.route("/timesheets")
 def timesheets():
