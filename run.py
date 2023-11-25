@@ -6,12 +6,12 @@ from overheadmanager import app
 import gspread
 from google.oauth2.service_account import Credentials
 
-if __name__ == "__main__":
-    app.run(
-        host=os.environ.get("IP"),
-        port=int(os.environ.get("PORT")),
-        debug=os.environ.get("DEBUG")
-    )
+#if __name__ == "__main__":
+     # app.run(
+      #  host=os.environ.get("IP"),
+        #port=int(os.environ.get("PORT")),
+      #  debug=os.environ.get("DEBUG")
+  #  )
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -24,8 +24,11 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Milestone-project-3')
 
-charge = SHEET.worksheet('Sheet1')
+fy21 = SHEET.worksheet('FY21/22')
+january = SHEET.worksheet('January')
 
-data = charge.get_all_values()
+data = fy21.get_all_values()
+data2 = january.get_all_values()
 
 print(data)
+print(data2)
