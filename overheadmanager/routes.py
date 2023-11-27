@@ -13,11 +13,11 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Milestone-project-3')
 
-fy21 = SHEET.worksheet('FY21/22')
-january = SHEET.worksheet('January')
+fy22 = SHEET.worksheet('FY22/23')
+november = SHEET.worksheet('November')
 
-data = fy21.get_all_values()
-data2 = january.get_all_values()
+data = fy22.get_all_values()
+data2 = november.get_all_values()
 
 print(data)
 print(data2)
@@ -30,13 +30,13 @@ def home():
 
 @app.route("/reports")
 def reports():
-    fy21 = SHEET.worksheet('FY21/22')
-    data = fy21.get_all_values()
+    fy22 = SHEET.worksheet('FY22/23')
+    data = fy22.get_all_values()
     return render_template("reports.html", sheet_data=data)
 
 
 @app.route("/timesheets")
 def timesheets():
-    january = SHEET.worksheet('January')
-    data = january.get_all_values()
+    november = SHEET.worksheet('November')
+    data = november.get_all_values()
     return render_template("timesheets.html", sheet_data=data)
