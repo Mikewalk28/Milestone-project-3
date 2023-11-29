@@ -10,16 +10,45 @@
     <title>Overhead Manager</title>
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Overhead Manager</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            <li><a href="timesheets">Timesheets</a></li>
-            <li><a href="reports">Reports</a></li>
-          </ul>
+<!-- Header for top of page including navbar -->
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Overhead Manager</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="timesheets">Timesheets</a></li>
+                <li><a href="reports">Reports</a></li>
+             </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="content">
+        <a class="waves-effect waves-light btn">Enter Timesheets</a>
+    </div>
+    
+    <div>
+        <a class="waves-effect waves-light btn">Generate Reports</a>
+
+   
+
+    
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+        <div class="footer-copyright">
+          <div class="container">
+          © 2023 Michael Walker Milestone Project 3
+          <a class="grey-text text-lighten-4 right">Code Institute</a>
+          </div>
         </div>
-      </nav>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     
 </body>
 </html>
