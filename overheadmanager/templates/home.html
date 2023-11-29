@@ -14,7 +14,7 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Overhead Manager</a>
+            <a class="brand-logo">Overhead Manager</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
                 <li><a href="timesheets">Timesheets</a></li>
@@ -23,6 +23,12 @@
             </div>
         </nav>
     </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
     <!-- Buttons to take you posting timesheet or to the report section -->
     <div class="content">
         <a class="waves-effect waves-light btn">Enter Timesheets</a>
