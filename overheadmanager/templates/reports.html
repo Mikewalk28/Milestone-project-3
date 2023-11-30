@@ -1,17 +1,17 @@
 {% extends "home.html" %}
 {% block content %}
-
-
+​
+​
 <h3 class="white-text text-darken-4 center-align">Reports</h3>
-
-
     Reports
-    {% for data in sheet_data%}
-        <h2>{{data}}</h2>
-    {%endfor%}
     <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
 {% endblock %}
 {% block extrascript %}
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script>
+​
+    var data = {{bar_data|safe}}
+    Plotly.newPlot('myDiv', data);
+​
+</script>
 {% endblock %}
     
