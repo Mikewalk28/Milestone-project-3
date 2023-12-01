@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
     <title>Overhead Manager</title>
 </head>
 <body>
@@ -24,12 +23,12 @@
             </div>
         </nav>
     </header>
-​
+
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
-​
+
     <!-- Buttons to take you posting timesheet or to the report section -->
     <div class="content" id="homeSection">
         <a href="timesheets" class="waves-effect waves-light btn" id="timesheet">Enter Timesheets</a>
@@ -37,10 +36,10 @@
     
     <div>
         <a href="reports" class="waves-effect waves-light btn" id="report">Generate Reports</a>
-​
+
    
-​
-    
+
+    <!-- Footer with name and link to code institute -->
     <footer class="page-footer">
         <div class="footer-copyright">
           <div class="container">
@@ -49,12 +48,11 @@
           </div>
         </div>
     </footer>
-​
-​
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     {% block extrascript %}
     {% endblock %}
-   
     
 </body>
 </html>

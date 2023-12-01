@@ -1,17 +1,18 @@
 {% extends "home.html" %}
 {% block content %}
-​
-​
-<h3 class="white-text text-darken-4 center-align">Reports</h3>
-    Reports
+
+<!-- This page will be on click buttons to show graphs that show relational data to the button you click -->
+
+<h3 class="red-text text-darken-4 center-align">Reports</h3>
+    
     <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
 {% endblock %}
 {% block extrascript %}
 <script>
-​
+// Graph layouts //
     var data = {{bar_data|safe}}
     Plotly.newPlot('myDiv', data);
-​
+
 </script>
 {% endblock %}
     
