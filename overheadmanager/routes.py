@@ -4,11 +4,13 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
     ]
+
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
@@ -51,3 +53,8 @@ def timesheets():
     november = SHEET.worksheet('November')
     data = november.get_all_values()
     return render_template("timesheets.html", sheet_data=data)
+
+
+@app.route("/add_timesheet", methods=["GET", "POST"])
+def add_timesheet():
+    return render_template("add_timesheet.html")

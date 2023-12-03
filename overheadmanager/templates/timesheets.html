@@ -3,6 +3,12 @@
 
 <h3 class="red-text text-darken-4 center-align">Timesheets</h3>    
     
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_timesheet') }}" class="btn-large green darken-3">
+            Add Timesheet <i class="fa-solid fa-calendar-days" style="color: #248a3d;"></i>
+        </a>
+    </div>
     {% for data in sheet_data%}
         <h2>{{data}}</h2>
     {%endfor%}
