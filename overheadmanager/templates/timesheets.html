@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3 class="red-text text-darken-4 center-align">Timesheets</h3>    
-
+<!-- Drop down lists to select variables -->
 <div class="row card-panel red lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_timesheet') }}">
         <!-- category name -->
@@ -28,6 +28,7 @@
                 <label>Employee</label>
             </div>
         </div>
+        <!-- Manual input button for numerical value -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="far fa-clock prefix green-text text-darken-1"></i>
