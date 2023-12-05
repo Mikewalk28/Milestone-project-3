@@ -2,15 +2,55 @@
 {% block content %}
 
 <h3 class="red-text text-darken-4 center-align">Timesheets</h3>    
-    
-<div class="row">
-    <div class="col s12 center-align">
-        <a href="{{ url_for('add_timesheet') }}" class="btn-large green darken-3">
-            Add Timesheet <i class="fa-solid fa-calendar-days" style="color: #248a3d;"></i>
-        </a>
-    </div>
-    {% for data in sheet_data%}
-        <h2>{{data}}</h2>
-    {%endfor%}
+
+<div class="row card-panel red lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_timesheet') }}">
+        <!-- category name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <select name="sector">
+                  <option value="" disabled selected>Choose your sector</option>
+                  {% for sector in sheet_data.sectors%}
+                  <option value="{{sector}}">{{sector}}</option>
+                  {%endfor%}
+                </select>
+                <label>Sector</label>
+              </div>
+            
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select name="employee">
+                    {% for employee in sheet_data.employees%}
+                        <option value="{{employee}}">{{employee}}</option>
+                    {%endfor%}
+                </select>
+                <label>Employee</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="far fa-clock prefix green-text text-darken-1"></i>
+                <input id="category_name" name="hours" minlength="1" maxlength="3" type="number" class="validate" required>
+                <label for="category_name">Hours Worked</label>
+            </div>
+        </div>    
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large green darken-1">
+                    Add Timesheet<i class="fas fa-calendar-alt" style="color: #39861d;"></i></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
+  });
+</script>
 
 {% endblock %}

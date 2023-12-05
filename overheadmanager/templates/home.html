@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
     <title>Overhead Manager</title>
 </head>
 <body>
@@ -29,17 +30,18 @@
 
     <main class="container">
         {% block content %}
+         <!-- Buttons to take you posting timesheet or to the report section -->
+        <div id="homeSection" class="col s12 center-align">
+            <a href="timesheets" id="timesheet" class="btn-large green darken-3">Enter Timesheets</a>
+        </div>
+        
+        <div class="col s12 center-align">
+            <a href="reports" id="report" class="btn-large green darken-3">Generate Reports</a>
+        </div>
         {% endblock %}
     </main>
 
-    <!-- Buttons to take you posting timesheet or to the report section -->
-    <div id="homeSection" class="col s12 center-align">
-        <a href="timesheets" id="timesheet" class="btn-large green darken-3">Enter Timesheets</a>
-    </div>
-    
-    <div class="col s12 center-align">
-        <a href="reports" id="report" class="btn-large green darken-3">Generate Reports</a>
-    </div>
+   
    
 
     <!-- Footer with name and link to code institute -->
@@ -54,6 +56,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
     {% block extrascript %}
     {% endblock %}
     
