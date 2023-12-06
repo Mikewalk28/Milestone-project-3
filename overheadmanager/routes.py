@@ -48,7 +48,7 @@ def timesheets():
     return render_template("timesheets.html", sheet_data={'sectors': sectors, 'employees': employees})
 
 
-@app.route("/view_timesheet", methods=["GET", "POST"])
+@app.route("/add_timesheet", methods=["GET", "POST"])
 def add_timesheet():
     print(request.form)
     november = SHEET.worksheet('November')
@@ -59,4 +59,4 @@ def add_timesheet():
     selected_sector_index = sectors.index(request.form['sector']) + 2
     print(f"selected_employee_index {selected_employee_index} - selected_sector_index {selected_sector_index}")
     november.update_cell(selected_sector_index, selected_employee_index, request.form['hours']) 
-    return render_template("view_timesheet.html")
+    return render_template("add_timesheet.html")

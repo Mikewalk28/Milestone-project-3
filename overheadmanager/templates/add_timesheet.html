@@ -1,0 +1,37 @@
+{% extends "home.html" %}
+{% block content %}
+
+<h3 class="red-text text-darken-4 center-align">View Timesheets</h3>    
+    
+<!-- Timesheets appear here -->  
+<div class="row">
+    <div class="col s12 m6 l2">
+        <div class="card horizontal red lighten-5 center-align">
+            <div class="card-stacked">
+                <div class="card-content white-text">
+                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                </div>
+            <div class="card-action">
+            <a href="#" class="btn green darken-4">Edit</a>
+            <a href="#" class="btn red">Delete</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- submit button -->
+<div class="row">
+    <div id="homeSection" class="col s12 center-align">
+        <a href="timesheets" id="timesheet" class="btn-large green darken-3">Add Another Timesheet<i class="fas fa-calendar-alt" style="color: white;"></i></a>
+    </div>
+</div>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
+  });
+</script>
+
+{% endblock %}
