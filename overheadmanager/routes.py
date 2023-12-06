@@ -30,7 +30,8 @@ def home():
 
 
 @app.route("/reports")
-def reports():"""
+def reports():
+    """
     Pull the information from FY22/23 worksheet to get the report data.
     Use the headers from the sheet to target the axis for the charts.
     Update the sheet to show the reports output.
@@ -56,10 +57,10 @@ def timesheets():
 @app.route("/add_timesheet", methods=["GET", "POST"])
 def add_timesheet():
     """
-    Pull the information from Nobember worksheet to get the employee data.
+    Pull the information from November worksheet to get the employee data.
     Use the index function to match the employee to the sector and post.
     Update the sheet to show the hours worked.
-    Credit:
+    Credit: https://docs.gspread.org/en/latest/user-guide.html#updating-cells
     """
     print(request.form)
     november = SHEET.worksheet('November')
@@ -69,25 +70,9 @@ def add_timesheet():
     selected_employee_index = employees.index(request.form['employee']) + 2
     selected_sector_index = sectors.index(request.form['sector']) + 2
     print(f"selected_employee_index {selected_employee_index} - selected_sector_index {selected_sector_index}")
-    november.update_cell(selected_sector_index, selected_employee_index, request.form['hours']) 
-    return render_template("add_timesheet.html")
+    november.update_cell(selected_sector_index, selected_employee_index, request.form['hours'])
+    hour_values = [value[1:12] for value in values[1:]]
+    print(hour_values)
+    return render_template("add_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values})
 
 
-@app.route("/edit_timesheet", methods=["GET", "POST"])
-def edit_timesheet():
-    """
-    Pull the information from Nobember worksheet to get the employee data.
-    Use the index function to match the employee to the sector and post.
-    Update the sheet to show the hours worked.
-    Credit:
-    """
-    print(request.form)
-    november = SHEET.worksheet('November')
-    values = november.get_all_values()
-    sectors = [value[0] for value in values[1:]]
-    employees = values[0][1:12]
-    selected_employee_index = employees.index(request.form['employee']) + 2
-    selected_sector_index = sectors.index(request.form['sector']) + 2
-    print(f"selected_employee_index {selected_employee_index} - selected_sector_index {selected_sector_index}")
-    november.update_cell(selected_sector_index, selected_employee_index, request.form['hours']) 
-    return render_template("edit_timesheet.html")

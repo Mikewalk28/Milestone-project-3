@@ -5,10 +5,10 @@
 <!-- Drop down lists to select variables -->
 <div class="row card-panel red lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_timesheet') }}">
-        <!-- category name -->
+        <!-- Category name -->
         <div class="row">
             <div class="input-field col s12">
-                <select name="sector">
+                <select name="sector" class="validate" required>
                   <option value="" disabled selected>Choose your sector</option>
                   {% for sector in sheet_data.sectors%}
                   <option value="{{sector}}">{{sector}}</option>
@@ -46,7 +46,7 @@
         </div>
     </form>
 </div>
-
+<!-- https://plotly.com/python/bar-charts/ -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
