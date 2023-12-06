@@ -53,7 +53,7 @@ The website is split into 3 sections:
 * After this, the use can choose to input another timesheet where they will be redirected back to the front page to be able to post another timesheet.
 
 ### Reports Section
-![Reports Page](/workspaces/Milestone-project-3/images/reports page.png)
+![Reports Page](/images/reports_page.png)
 * This is the section where the user can view data from previous financial years to compare how long they spent working on projects in other sectors.
 * This is for the management to look at as the data in here would grasp on teh financials and show you in a clear concise way where time is being spent as well as where the money is being earned.
 
@@ -61,7 +61,7 @@ The website is split into 3 sections:
 
 * The layout of the website changed mostly due to the idea being changed. Originally this was going to be a cost managment system for manufacturing products, however, this idea would have been over time consuming and impractical. The idea became to just focus on the analytical areas on the information I already had stored from my time working in the company.
 * The idea still pulls through from the google sheet, using two different ones for the different sections. Timesheets uses the current month sheet, where reports uses the old financial year sheet.
-![November](/workspaces/Milestone-project-3/images/november.png)
+![November](images/november.png)
 ![FY22/23](/workspaces/Milestone-project-3/images/fy.png)
 
 # Testing
