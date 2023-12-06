@@ -62,17 +62,14 @@ def add_timesheet():
     Update the sheet to show the hours worked.
     Credit: https://docs.gspread.org/en/latest/user-guide.html#updating-cells
     """
-    print(request.form)
     november = SHEET.worksheet('November')
     values = november.get_all_values()
     sectors = [value[0] for value in values[1:]]
     employees = values[0][1:12]
     selected_employee_index = employees.index(request.form['employee']) + 2
     selected_sector_index = sectors.index(request.form['sector']) + 2
-    print(f"selected_employee_index {selected_employee_index} - selected_sector_index {selected_sector_index}")
     november.update_cell(selected_sector_index, selected_employee_index, request.form['hours'])
     hour_values = [value[1:12] for value in values[1:]]
-    print(hour_values)
     return render_template("add_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values})
 
 

@@ -1,111 +1,68 @@
 # Overhead Manager
 
-Overhead Manager is a simple to use timesheet platform where you can post your work hours based upon your work sector. The example used is based on some previous real life work undertaken in an architects firm. The data used, uses actual overhead costing but the names and values have all changed due to confidentiality.
+Overhead Manager is a simple to use timesheet platform where you can post your work hours based upon your work sector. The example used is based on some previous real life work undertaken in an architects firm. The data used, uses actual overhead costing but the names and values have all changed due to confidentiality. The idea originally arose from a period of work experience undertaken where I worked out the cost analysis and management reports for the company to help them work out their profitability ratios per sector.
 
-* To provide the user with an easy to navigate quiz game that is challenging whilst also not extensively time consuming.
-* To present the user with a website that is visually appealing and fully responsive.
-* To allow the user to test their general knowledge against a selection of randomly selected questions.
-* To present the user with a quick thinking challenge whilst also not being too restricting.
-* To tempt the user to come back and try again to get further and further along. 
+<details>
+
+<summary>Overhead Manager</summary>
+
+![Desktop View](/workspaces/Milestone-project-3/images/desktop_wireframe.png)
+</details>
+
 
 # User Stories
 
 ## User Goals
 
-### First Time User
+* To provide the user with an easy to navigate timesheet portal to track hours worked in a specific sector.
+* To present the user with a layout that is easy to understand and read.
+* To allow the user to view graphs of previous financial years results and current expectations.
 
-* As a first time user I want to understand the main purpose of the quiz.
-* As a first time user I want to be able to naavigate the quiz, understand the concept of the quiz, see how far I can get and restart the quiz should I fail.
-* As a first time user I want to have fun and also expand my general knowledge.
-  
-### Returning User
+### As a user I want to:
 
-* As a returning user I want to be able to play the same quiz and still enjoy it as much as the first time.
-* As a returning user I want to be able to get further than the first time I attempted the quiz.
+* I want to understand the main purpose of the website.
+* I want to be able to naavigate the website, understand the concept of the website and use the website confidently.
+* I want to be able to discuss the website with other potential users.
 
 # Design
 
 ## Imagery and colour scheme
 
-* The colour scheme of the site was given careful consideration. The colours used in the quiz is important to the overall experience of the user.
-* The background of the site was chosen from a selection of images that relayed with how I wanted the quiz to look. Both images sourced from:
-* https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373356.htm#query=question%20mark%20background&position=11&from_view=keyword&track=ais
-* https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373361.htm#query=question%20mark%20background&position=15&from_view=keyword&track=ais
-* Once the background image was chosen, it was important to make sure the quiz followed suit and so Blue and White became the two dominant colours.
-* Making sure the image and the question and answers contrasted was important to make sure the accessibility for the user was always paramount, that is why there is large black backgrounds to take the focus off the background image.
-
-## Fonts
-
-Sans Serif is the default font used for this quiz. There wasn't much reason for changing the font as the question aim was to be readable in a quick manner. Google fonts were imported to explore but ultimately settled on the default font.
+* The colour scheme of the site was given careful consideration. The colours used in the website is important to the overall experience of the user.
+* The colour scheme was chosen based on what colours are easy on the eye and also bearing in the mind the colour scheme of accounting software.
+* Once the colours were chosen, it was a test to see if they blended together, the gentle red is easy on the eye and the green is just enough to capture the attention of where the user needs to go.
   
 ## Layout
 
-The quiz site is a single page with 3 sections:
+The website is split into 3 sections:
 
-* Welcome Area
-* Play game
-* How to play
+* Home
+* Timesheets
+* Reports
 
-## Initial Wireframes
+## Timesheets and reports features
 
-Wireframes were designed on https://wireframe.cc
+### Timesheet Page
+![Timesheet Page](/workspaces/Milestone-project-3/images/timesheet.png)
+* When the user clicks the timesheet page, this is what they are greeted with.
+    * They then choose the sector they wish to post into,
+    * Their name,
+    * How many hours they worked
+*  After this they are then greeted with a view of the current state of hours worked in the month  
+![Timesheet Table](/workspaces/Milestone-project-3/images/timesheet_section.png)
+* After this, the use can choose to input another timesheet where they will be redirected back to the front page to be able to post another timesheet.
 
-<details>
-
-<summary>Computer Wireframe</summary>
-
-![Desktop Wireframe](assets/images/readme-images/computer-wireframe.png)
-</details>
-
-<details>
-
-<summary>iPad Wireframe</summary>
-    
-![iPad Wireframe](assets/images/readme-images/ipad-wireframe.png)
-</details>
-        
-<details>
-
-<summary>Mobile Wireframe</summary>
-    
-![iPhone Wireframe](assets/images/readme-images/iphone-wireframe.png)
-</details>
-
-## Features
-
-### Home page
-
-The home page of this website is very simple, it has a H1 heading stating the name of the game and two simplistic buttons to choose from:
-- Play
-- How to Play
-  
-![Home page](assets/images/readme-images/home-page.png)
-
-### How to play page
-
-When the user clicks "How the Endless Quiz works", it tkaes them to a little intro secction that explains the main aim of the game, with a back button to return to the main page.
-
-![How To page](assets/images/readme-images/how-to.png)
-
-### Game area
-
-Once the user clicks play the game will start and they will be presented with a question, in which they have 15 seconds to choose one of the 4 options presented to them.
-
-![Game area](assets/images/readme-images/game-area.png)
-
-### Game over
-
-The game can end in one of two ways:
-- When time expires, which brings a message saying "Time's up!, or;
-- When they select a wrong answer in which a message pops up saying "Game over, wrong answer." with the option to play again.
-  
-![Game over](assets/images/readme-images/game-over-time.png)
-![Game over](assets/images/readme-images/game-over-wrong.png)
+### Reports Section
+![Reports Page](/workspaces/Milestone-project-3/images/reports page.png)
+* This is the section where the user can view data from previous financial years to compare how long they spent working on projects in other sectors.
+* This is for the management to look at as the data in here would grasp on teh financials and show you in a clear concise way where time is being spent as well as where the money is being earned.
 
 ### Layout change
 
-* The layout of the website changed mostly as the positioning of the timer wasn't in the middle of the questions. This may have created a harder to read atmosphere and players would focus more on the timer than the actual question/answer due to their eyes being drawn to the timer.
-* Rather than two seperate border boxes, one box was used to keep the styling in sync especially when longer questions came out.
+* The layout of the website changed mostly due to the idea being changed. Originally this was going to be a cost managment system for manufacturing products, however, this idea would have been over time consuming and impractical. The idea became to just focus on the analytical areas on the information I already had stored from my time working in the company.
+* The idea still pulls through from the google sheet, using two different ones for the different sections. Timesheets uses the current month sheet, where reports uses the old financial year sheet.
+![November](/workspaces/Milestone-project-3/images/november.png)
+![FY22/23](/workspaces/Milestone-project-3/images/fy.png)
 
 # Testing
 
