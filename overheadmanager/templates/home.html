@@ -21,6 +21,7 @@
             <a href="/" class="brand-logo">Overhead Manager</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
                 <li><a href="{{ url_for('timesheets') }}">Timesheets</a></li>
                 <li><a href="{{ url_for('reports') }}">Reports</a></li>
              </ul>
@@ -31,10 +32,14 @@
     <main class="container">
         {% block content %}
          <!-- Buttons to take you posting timesheet or to the report section -->
+         <div id="homeSection" class="col s12 center-align">
+            <a href="{{ url_for('projects') }}" id="project" class="btn-large green darken-3">Start Project<i class="fas fa-pencil-alt" style="color: white;"></i></a>
+        </div>
+        <br>
         <div id="homeSection" class="col s12 center-align">
             <a href="{{ url_for('timesheets') }}" id="timesheet" class="btn-large green darken-3">Enter Timesheets<i class="fas fa-calendar-alt" style="color: white;"></i></a>
         </div>
-        
+        <br>
         <div class="col s12 center-align">
             <a href="{{ url_for('reports') }}" id="report" class="btn-large green darken-3">Generate Reports<i class="fas fa-chart-bar" style="color: white;"></i></a>
         </div>
