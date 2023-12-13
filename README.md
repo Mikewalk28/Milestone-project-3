@@ -62,7 +62,7 @@ The website is split into 3 sections:
 * The layout of the website changed mostly due to the idea being changed. Originally this was going to be a cost managment system for manufacturing products, however, this idea would have been over time consuming and impractical. The idea became to just focus on the analytical areas on the information I already had stored from my time working in the company.
 * The idea still pulls through from the google sheet, using two different ones for the different sections. Timesheets uses the current month sheet, where reports uses the old financial year sheet.
 ![November](images/november.png)
-![FY22/23](Milestone-project-3/images/fy.png)
+![FY22/23](images/fy.png)
 
 # Testing
 
@@ -81,46 +81,27 @@ The website is split into 3 sections:
 
 - All buttons were tested manually to make sure the navigation for the user was correct.
 
-### Game testing
+### Projects testing
 
-- The game was tested by numerous family and friends to ensure everything was working and as they would have different levels of knowledge, it helped to go further into the quiz to see if it responded the same. Things that were tested included:
-  - Question shows correctly when the quiz starts,
-  - The How To section shows the instuctions clearly,
-  - When the timer runs out the game ends and the user can no longer click,
-  - When the user chooses the wrong answer the game ends and they can no longer click,
-  - When the user gets a question right, the question changes and the timer restarts,
-  - The timer stops when the game ends,
-  - The game over pop up shows correctly and,
-  - The win game pop up shows correctly.
 
-### Browser testing
 
-- The game was tested on Google Chrome, Microsoft Edge and Safari with no issues reported.
+### Timesheet testing
 
-### Device testing
 
-- The game was played on a number of devices, including phones, desktop, laptop and tablet. This was to ensure the game was responsive and the layout looked clear on all devices.
+
+### Reports testing
+
+
 
 ### Bugs fixed in development process
 
-### Question not showing on playing of game
+### 
 
-- When the user clicked on the play button, the game wouldn't appear. This was due to the eventListener not having the correct id called to it.
-- To fix this, I removed any excess code that didn't relate to the question and the play button and slowly put it in one line at a time to see what I was calling on each line of code.
-
-### Ability to still click answers after game over
-
-- When the timer ran out or you chose a wrong option, you could still click the answers behind the modal until you chose the right answer to move the quiz on.
-- This was fixed by adding in let blocked = false; and calling it in my function checkAnswer, so when the answer was false, they could no longer click anything behind the modal.
+### 
   
-### Timer not reseting on question change
+### .
 
-- Upon choosing the correct answer the timer didn't stop its current count, it just carried on. The same was said for the end of game when there was only a few test questions.
-- This was fixed by adding in clearInterval(timer); to the winGame and gameOver function.
-
-### Known bugs
-
-- There are no known bugs. After Debugging the quiz works exactly as it should.
+### 
 
 # Technologies used
 
@@ -146,30 +127,13 @@ The website is split into 3 sections:
 
 # Deployment
 
-The site was deployed using GitHub pages. The steps to deploy using GitHub pages are:
-
-1. Go to the repository on GitHub.com
-2. Select 'Settings' near the top of the page.
-3. Select 'Pages' from the menu bar on the left of the page.
-4. Under 'Source' select the 'Branch' dropdown menu and select the main branch.
-5. Once selected, click the 'Save'.
-6. Deployment should be confirmed by a message on a green background saying "Your site is published at" followed by the web address.
 
 # Ideas for Improvement
 
 ### User experience
 
-* Allow first time users to select a subsection of the quiz for something they enjoy more than a general quiz.
-* Allow first time users to choose a mode of difficulty for the question bank.
-* Allow the ability for first time/returning users to choose how long they want on the timer.
-* Starting the quiz from a completely random point, and subsequent questions will be random, so the user won't do the quiz in the same order.
-* Tracking the time it takes people to do the quiz. (Completions only)
-* Having a set time to complete the whole quiz in.
-* Having a local/non-local leaderboard to compare scores and see who did the quiz in the fastest time.
+
 
 ### Development
 
-* Linking an API with a larger question bank for the JavaScript to call on.
-* Adding sounds to the timer when it counts down.
-* Adding delay to the click function and changing the colour of the answer when correct (like in who wants to be a millionaire).
-* Breaks to tell you when the questions increment in difficulty.
+
