@@ -40,7 +40,7 @@ The website is split into 3 sections:
 * Timesheets
 * Reports
 
-## Timesheets and reports features
+## Projects, Timesheets and reports features
 
 ### Timesheet Page
 ![Timesheet Page](images/timesheet.png)
