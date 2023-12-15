@@ -31,6 +31,10 @@
 
     <main class="container">
         {% block content %}
+        <div>
+            <h3 class="red-text text-darken-4 center-align">Home</h3>
+        </div>
+        <br>
          <!-- Buttons to take you posting timesheet or to the report section -->
          <div id="homeSection" class="col s12 center-align">
             <a href="{{ url_for('projects') }}" id="project" class="btn-large green darken-3">Start Project<i class="fas fa-pencil-alt" style="color: white;"></i></a>
