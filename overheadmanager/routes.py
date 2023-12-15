@@ -30,6 +30,11 @@ def home():
 
 @app.route("/projects")
 def projects():
+    """
+    Pull the project headings through and post to the google sheet in table to be deleted or updated
+    """
+    project = SHEET.worksheet('Projects')
+    values = projects.get_all_values()
     return render_template("projects.html")
 
 @app.route("/reports")
