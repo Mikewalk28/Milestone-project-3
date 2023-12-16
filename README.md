@@ -40,7 +40,7 @@ The website is split into 3 sections:
 * Timesheets
 * Reports
 
-## Projects, Timesheets and reports features
+## Timesheets and reports features
 
 ### Timesheet Page
 ![Timesheet Page](images/timesheet.png)
@@ -69,24 +69,21 @@ The website is split into 3 sections:
 ### Validator testing
   - ## HTML
     - No errors were returned after passing code through official W3C Markup Validator.
-      - ![HTML Validator](assets/images/readme-images/html-validator.png)
   - ## CSS
     - No errors were found when passing CSS code through official W3C CSS Validator.
-    - ![CSS Validator](assets/images/readme-images/css-validator.png)
   - ## JavaScript
-    - No errors were returned when passing through the JSHint Validator (https://jshint.com/)
-      - ![JS Validator](assets/images/readme-images/js-validator.png)
+    - No errors were returned when passing through the JSHint Validator.
+  - ## Python
+    - No errors were returned when passing through Pep8.
+    - This was also checked through pythonchecker.com for hints on indentation and syntax.
 
 ### Button testing
 
 - All buttons were tested manually to make sure the navigation for the user was correct.
 
-### Projects testing
-
-
-
 ### Timesheet testing
 
+- The timesheet section of the application was tested through 
 
 
 ### Reports testing
@@ -135,5 +132,10 @@ The website is split into 3 sections:
 
 
 ### Development
+
+
+### Credits
+
+* The slack community as well as my mentor Anto for timely responses and great feedback!
 
 
