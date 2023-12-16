@@ -28,15 +28,6 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/projects")
-def projects():
-    """
-    Pull the project headings through and post to the google sheet in table to be deleted or updated
-    """
-    project = SHEET.worksheet('Projects')
-    values = projects.get_all_values()
-    return render_template("projects.html")
-
 @app.route("/reports")
 def reports():
     """
@@ -79,5 +70,3 @@ def add_timesheet():
     november.update_cell(selected_sector_index, selected_employee_index, request.form['hours'])
     hour_values = [value[1:12] for value in values[1:]]
     return render_template("add_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values})
-
-
