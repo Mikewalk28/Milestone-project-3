@@ -83,22 +83,17 @@ The website is split into 3 sections:
 
 ### Timesheet testing
 
-- The timesheet section of the application was tested through 
+- The timesheet section of the application was tested through viewing the google sheet and the terminal side by side. Using print() functions within the code, and running the project on the web browser to check that the terminal returned the same variables in the correct position of the sheet and posted into the right cell. This was done by using an index +2, to make sure it didn't post to the wrong sector or person.
 
 
 ### Reports testing
 
-
+- This wasn't fully complete as this was used to test pulling data from the sheet and using plotly to be able to post a graph on view. This would have been further advanced by splitting different replorts into sub-sections and the graphs would appear after a loading bar after the user chose the section of reports they wanted to look at.
 
 ### Bugs fixed in development process
 
-### 
-
-### 
-  
-### .
-
-### 
+### Error posting values in the correct cell
+* When populating the timesheet table, the cells were populating to the wrong person and wrong sector by one notch. So to corect this, I added a +2 to the index and this lined it up perfectly. 
 
 # Technologies used
 
@@ -114,6 +109,8 @@ The website is split into 3 sections:
 - https://stackoverflow4.com - Used to get advice and tips on how to print from and to google sheets.
 - https://github.com/ - Used for hosting.
 - https://plotly.com - Used for creation of reports.
+- https://elephantsql.com - Used to database link for app
+- https://heroku.com - Used to deploy the app
 
 ### External resources used
 
@@ -124,14 +121,44 @@ The website is split into 3 sections:
 
 # Deployment
 
+Before deploying to Heroku pip3 freeze > requirements.txt was used to add all the dependencies required to the requirements.txt file. This is required for the game to run on Heroku.
+
+The following steps were then taken:
+
+1. Log in to Heroku or create an account.
+2. On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
+3. Enter a unique and meaningful app name.
+4. Next select your region.
+5. Click on the Create App button.
+6. Click on the Settings Tab and scroll down to Config Vars.
+7. Enter DATABASE_URL and paste in elephantsql.com link
+8. Click Reveal Config Vars and enter port into the Key box and 5000 into the Value box and click the Add button.
+9. Input CREDS and the content of your Google Sheet API creds file as another config var and click add.
+10. In the next Key box enter OXFORD_API_APP_ID and add your unique ID to the value box.
+11. In the next Key box enter OXFORD_API_APP_KEY and add your unique key to the value box.
+12. Next, scroll down to the Buildpack section click Add Buildpack select Python and click Save Changes
+13. Repeat step 11 to add node.js. Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
+14. Scroll to the top of the page and choose the Deploy tab.
+15. Select Github as the deployment method.
+16. Confirm you want to connect to GitHub.
+17. Search for the repository name and click the connect button.
+18. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+19. Click View to view the deployed site.
+The site is now live and operational!
+
 
 # Ideas for Improvement
 
-### User experience
-
-
 
 ### Development
+
+* Insert a project page where the user can view, amend and update any projects currently in action; whilst then setting a due date and marking them as complete and archiving or deleting.
+* Make the timesheet page postable for individual days, with a cap of 7.5 hours a day (or equivalent of hours they work in the day) rather than a cumulative total of hours spent on the sector and make this add to the current total in month, whiilst also being capped at the total hours for the month available. (Also being able to post holiday hours and use the non-working overhead variable rate)
+* Timesheets applicable to the projects being worked on, and the sector autofills. So can work out costing per project as well as per sector. More definable variables.
+* Live reports page where you can work on old financial year totals as well as current year totals and comparisons.
+ - Ability to compare the revenue coming in from a project, and the overhead costs currently incurred on it. Whether it be by variable rate or charge out rate.
+ - Ability to see current profit projections based on work completed.
+
 
 
 ### Credits
