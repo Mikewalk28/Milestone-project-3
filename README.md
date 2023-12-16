@@ -94,6 +94,13 @@ The website is split into 3 sections:
 
 ### Error posting values in the correct cell
 * When populating the timesheet table, the cells were populating to the wrong person and wrong sector by one notch. So to corect this, I added a +2 to the index and this lined it up perfectly. 
+* Unable to deploy to Heroku due to a line line 2172, in <module>
+                 register_finder(pkgutil.ImpImporter, find_on_path)
+                                 ^^^^^^^^^^^^^^^^^^^
+             AttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?
+             [end of output]
+Unfortunately, I couldn't fix this in time and so the project was not deployed properly.
+* Plotly graph not being populated with my information and just posting an X, Y Axis. This was fixed by posting in the script source for the graph in which i posted to the bottom of the page, rather than the top. So the load process was in the wrong order.
 
 # Technologies used
 
