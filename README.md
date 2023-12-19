@@ -61,7 +61,9 @@ The website is split into 3 sections:
 
 * The layout of the website changed mostly due to the idea being changed. Originally this was going to be a cost managment system for manufacturing products, however, this idea would have been over time consuming and impractical. The idea became to just focus on the analytical areas on the information I already had stored from my time working in the company.
 * The idea still pulls through from the google sheet, using two different ones for the different sections. Timesheets uses the current month sheet, where reports uses the old financial year sheet.
+1. November Sheet
 ![November](images/november.png)
+2. Reports Data Sheet
 ![FY22/23](images/fy.png)
 
 # Testing
@@ -99,7 +101,8 @@ The website is split into 3 sections:
                                  ^^^^^^^^^^^^^^^^^^^
              AttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?
              [end of output]
-Unfortunately, I couldn't fix this in time and so the project was not deployed properly.
+This was a problem with heroku trying to deploy python 3.12, so I added a runtime.txt file, with the help of code institute tutorage to get this to bypass.
+* The next issue was the app not loading due to the creds.json not being read. This was fixed by amending the routes.py file to read the creds file from the config vars within heroku. 
 * Plotly graph not being populated with my information and just posting an X, Y Axis. This was fixed by posting in the script source for the graph in which i posted to the bottom of the page, rather than the top. So the load process was in the wrong order.
 
 # Technologies used
