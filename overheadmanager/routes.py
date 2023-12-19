@@ -3,7 +3,8 @@ from overheadmanager import app, db
 import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
-
+import os
+import json
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -11,10 +12,16 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('Milestone-project-3')
+CREDS_JSON = os.getenv('CREDS')
+
+if CREDS_JSON:
+    CREDS_DICT = json.loads(CREDS_JSON)
+    CREDS = Credentials.from_service_account_info(CREDS_DICT)
+    SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+    GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+    SHEET = GSPREAD_CLIENT.open('Milestone-project-3')
+else:
+    print("No credentials found")
 
 fy22 = SHEET.worksheet('FY22/23')
 november = SHEET.worksheet('November')
