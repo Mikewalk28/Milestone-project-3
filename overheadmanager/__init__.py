@@ -16,7 +16,6 @@ else:
     if uri.startswith("postgres://"):
         uri = uri.replace("postgres://", "postgresql://", 1)
     app.config["SQLALCHEMY_DATABASE_URI"] = uri  # heroku
-
 db = SQLAlchemy(app)
 
 from overheadmanager import routes

@@ -20,13 +20,9 @@
             {% for sector in sheet_data.sectors%}
               <tr>
                 <td>{{sector}}</td>
-                {%for hour in sheet_data.hours[loop.index0]%}
-                    <td>{{hour}} </td>
+                {%for hour in sheet_data.hours%}
+                    <td><input name="hours[]" value="{{hour}}"> </td>
                 {%endfor%}
-                <td>
-                  <a href="/edit_timesheet/1" class="btn-small green darken-3">Edit</a>
-                  <a href="" class="btn-small red darken-3">Delete</a>
-                </td>
               </tr>
             {%endfor%}
             </tbody>
@@ -37,7 +33,7 @@
 <!-- submit button -->
 <div class="row">
     <div id="homeSection" class="col s12 center-align">
-        <a href="timesheets" id="timesheet" class="btn-large green darken-3">Add Another Timesheet<i class="fas fa-calendar-alt" style="color: white;"></i></a>
+        <a href="timesheets" id="timesheet" class="btn-large green darken-3">Edit Timesheet<i class="fas fa-calendar-alt" style="color: white;"></i></a>
     </div>
 </div>
     

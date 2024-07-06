@@ -3,8 +3,7 @@ from overheadmanager import app, db
 import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
-import os
-import json
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -12,16 +11,10 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-CREDS_JSON = os.getenv('CREDS')
-
-if CREDS_JSON:
-    CREDS_DICT = json.loads(CREDS_JSON)
-    CREDS = Credentials.from_service_account_info(CREDS_DICT)
-    SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-    GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-    SHEET = GSPREAD_CLIENT.open('Milestone-project-3')
-else:
-    print("No credentials found")
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('Milestone-project-3')
 
 fy22 = SHEET.worksheet('FY22/23')
 november = SHEET.worksheet('November')
@@ -77,3 +70,21 @@ def add_timesheet():
     november.update_cell(selected_sector_index, selected_employee_index, request.form['hours'])
     hour_values = [value[1:12] for value in values[1:]]
     return render_template("add_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values})
+
+
+@app.route("/edit_timesheet/<row_id>", methods=["GET", "POST"])
+def edit_timesheet(row_id):
+    """
+    Pull the information from November worksheet to get the employee data.
+    Use the index function to match the employee to the sector and post.
+    Update the sheet to show the hours worked.
+    Credit: https://docs.gspread.org/en/latest/user-guide.html#updating-cells
+    """
+    november = SHEET.worksheet('November')
+    values = november.get_all_values()
+    sectors = [[value[0] for value in values[1:]][int(row_id)-1]]
+    print(sectors)
+    employees = values[0][1:12]
+    hour_values = values[int(row_id)][1:12]
+    print(hour_values)
+    return render_template("edit_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values})
