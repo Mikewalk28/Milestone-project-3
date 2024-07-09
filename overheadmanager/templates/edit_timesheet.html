@@ -1,6 +1,6 @@
 {% extends "home.html" %}
 {% block content %}
-
+<form method="POST" action="/edit_timesheet/{{sheet_data.row_index}}" >
 <h3 class="red-text text-darken-4 center-align">View Timesheets</h3>    
     
 <!-- Timesheets appear here -->  
@@ -21,7 +21,7 @@
               <tr>
                 <td>{{sector}}</td>
                 {%for hour in sheet_data.hours%}
-                    <td><input name="hours[]" value="{{hour}}"> </td>
+                    <td><input name="hours" value="{{hour}}"> </td>
                 {%endfor%}
               </tr>
             {%endfor%}
@@ -31,12 +31,12 @@
 </div>
 
 <!-- submit button -->
-<div class="row">
-    <div id="homeSection" class="col s12 center-align">
-        <a href="timesheets" id="timesheet" class="btn-large green darken-3">Edit Timesheet<i class="fas fa-calendar-alt" style="color: white;"></i></a>
-    </div>
-</div>
-    
+  <div class="row">
+      <div id="homeSection" class="col s12 center-align">
+          <button class="btn-large green darken-3" type="submit">Edit Timesheet<i class="fas fa-calendar-alt" style="color: white;"></i></button>
+      </div>
+  </div>
+</form>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
