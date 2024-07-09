@@ -96,3 +96,26 @@ def edit_timesheet(row_id):
     hour_values = values[int(row_id)][1:12]
     # print(hour_values)
     return render_template("edit_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values, 'row_index':  row_id})
+
+@app.route("/delete_timesheet/<row_id>", methods=["GET", "POST"])
+def delete_timesheet(row_id):
+    """
+    Pull the information from November worksheet to get the employee data.
+    Use the index function to match the employee to the sector and post.
+    Update the sheet to show the hours worked.
+    Credit: https://docs.gspread.org/en/latest/user-guide.html#updating-cells
+    """
+    november = SHEET.worksheet('November')
+
+    if request.form: 
+        selected_row_index = f'B{int(row_id)+1}'
+        november.update(selected_row_index, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        return redirect(url_for("add_timesheet"), code=302)
+
+    values = november.get_all_values()
+    sectors = [[value[0] for value in values[1:]][int(row_id)-1]]
+    # print(sectors)
+    employees = values[0][1:12]
+    hour_values = values[int(row_id)][1:12]
+    # print(hour_values)
+    return render_template("delete_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values, 'row_index':  row_id})

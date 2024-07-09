@@ -21,7 +21,7 @@
             <a href="/" class="brand-logo">Overhead Manager</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('timesheets') }}">Timesheets</a></li>
+                <li><a href="{{ url_for('add_timesheet') }}">Timesheets</a></li>
                 <li><a href="{{ url_for('reports') }}">Reports</a></li>
              </ul>
             </div>
@@ -36,7 +36,7 @@
         <br>
          <!-- Buttons to take you posting timesheet or to the report section -->
         <div id="homeSection" class="col s12 center-align">
-            <a href="{{ url_for('timesheets') }}" id="timesheet" class="btn-large green darken-3">Enter Timesheets<i class="fas fa-calendar-alt" style="color: white;"></i></a>
+            <a href="{{ url_for('add_timesheet') }}" id="timesheet" class="btn-large green darken-3">Enter Timesheets<i class="fas fa-calendar-alt" style="color: white;"></i></a>
         </div>
         <br>
         <div class="col s12 center-align">
