@@ -1,7 +1,7 @@
 {% extends "home.html" %}
 {% block content %}
-<form method="POST" action="/delete_timesheet/{{sheet_data.row_index}}" >
-<h3 class="red-text text-darken-4 center-align">View Timesheets</h3>    
+<form method="POST" class="delete_form" action="/delete_timesheet/{{sheet_data.row_index}}">
+<h3 class="red-text text-darken-4 center-align">Are you sure you want to delete this row?</h3>    
     
 <!-- Timesheets appear here -->  
         <table class="striped">
@@ -30,11 +30,12 @@
     </div>
 </div>
 
-<!-- submit button -->
+<!-- delete button -->
   <div class="row">
       <div id="homeSection" class="col s12 center-align">
-          <button class="btn-large red darken-3" type="submit">Delete Timesheet<i class="fas fa-calendar-alt" style="color: white;"></i></button>
-      </div>
+          <input class="btn-large red darken-3" type="submit" value="delete"><i class="fas fa-calendar-alt" style="color: white;"></i></input>
+          <a href="/add_timesheet" class="btn-large green darken-3">Cancel</a>
+        </div>
   </div>
 </form>
 <script>
