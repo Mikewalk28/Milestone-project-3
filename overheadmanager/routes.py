@@ -91,10 +91,8 @@ def edit_timesheet(row_id):
 
     values = november.get_all_values()
     sectors = [[value[0] for value in values[1:]][int(row_id)-1]]
-    # print(sectors)
     employees = values[0][1:12]
     hour_values = values[int(row_id)][1:12]
-    # print(hour_values)
     return render_template("edit_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values, 'row_index':  row_id})
 
 @app.route("/delete_timesheet/<row_id>", methods=["GET", "POST", "DELETE"])
@@ -114,8 +112,6 @@ def delete_timesheet(row_id):
 
     values = november.get_all_values()
     sectors = [[value[0] for value in values[1:]][int(row_id)-1]]
-    # print(sectors)
     employees = values[0][1:12]
     hour_values = values[int(row_id)][1:12]
-    # print(hour_values)
     return render_template("delete_timesheet.html", sheet_data={'sectors': sectors, 'employees': employees, 'hours': hour_values, 'row_index':  row_id})

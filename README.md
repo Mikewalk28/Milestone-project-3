@@ -43,14 +43,16 @@ The website is split into 3 sections:
 ## Timesheets and reports features
 
 ### Timesheet Page
-![Timesheet Page](images/timesheet.png)
-* When the user clicks the timesheet page, this is what they are greeted with.
-    * They then choose the sector they wish to post into,
-    * Their name,
-    * How many hours they worked
-*  After this they are then greeted with a view of the current state of hours worked in the month  
 ![Timesheet Table](images/timesheet_section.png)
-* After this, the use can choose to input another timesheet where they will be redirected back to the front page to be able to post another timesheet.
+* When the user clicks the timesheet page, this is what they are greeted with.
+    * They then choose to edit, delete existing timesheets or post a new timesheet,
+* If they select to add another timesheet they are greeted with this page:
+![Timesheet Addition](images/timesheet.png)
+Here they choose the following to post:
+  *Name
+  *Sector
+  *Hours worked
+* After this, the user can choose to input another timesheet where they will be redirected back to the front page to be able to post another timesheet or edit and delete current ones.
 
 ### Reports Section
 ![Reports Page](images/reports_page.png)
@@ -82,17 +84,31 @@ The website is split into 3 sections:
 ### Button testing
 
 - All buttons were tested manually to make sure the navigation for the user was correct.
+![Timesheet Button Testing](images/edit_timesheet.png)
+- Above is the selection of the edit button from the View Timeshets user page and as you can see above this navigates correctly.
 
 ### Timesheet testing
 
 - The timesheet section of the application was tested through viewing the google sheet and the terminal side by side. Using print() functions within the code, and running the project on the web browser to check that the terminal returned the same variables in the correct position of the sheet and posted into the right cell. This was done by using an index +2, to make sure it didn't post to the wrong sector or person.
+- The edit sheet was tested within the terminal to make sure that when the edit button on a certain sector is clicked, it returned the correct values and the correct sector:
+![Timesheet python testing](images/test_for_sector.png)
+![Timesheet sector testing](images/test_for_sectors_diff.png)
 
 
 ### Reports testing
 
 - This wasn't fully complete as this was used to test pulling data from the sheet and using plotly to be able to post a graph on view. This would have been further advanced by splitting different replorts into sub-sections and the graphs would appear after a loading bar after the user chose the section of reports they wanted to look at.
+![Reports Page](images/reports_page.png)
+- Even though not fully complete with plenty of data sets, the one graph I did implement has pulled through to show the total hours worked per sector in the previous year.
 
 ### Bugs fixed in development process
+
+### Delete function error
+* When trying to implement the delete button using the following code:
+![Delete Error](images/delete_code.png)
+the following error was popping up:
+![Delete Error Message](images/delete_error.png)
+This was fixed by adding in an extra parenthhesis around the block of zero's as it was a list item.
 
 ### Error posting values in the correct cell
 * When populating the timesheet table, the cells were populating to the wrong person and wrong sector by one notch. So to corect this, I added a +2 to the index and this lined it up perfectly. 
@@ -163,8 +179,9 @@ The site is now live and operational!
 ### Development
 
 * Insert a project page where the user can view, amend and update any projects currently in action; whilst then setting a due date and marking them as complete and archiving or deleting.
-* Make the timesheet page postable for individual days, with a cap of 7.5 hours a day (or equivalent of hours they work in the day) rather than a cumulative total of hours spent on the sector and make this add to the current total in month, whiilst also being capped at the total hours for the month available. (Also being able to post holiday hours and use the non-working overhead variable rate)
+* Make the timesheet page postable for individual days, with a cap of 7.5 hours a day (or equivalent of hours they work in the day) rather than a cumulative total of hours spent on the sector and make this add to the current total in month, whilst also being capped at the total hours for the month available. (Also being able to post holiday hours and use the non-working overhead variable rate)
 * Timesheets applicable to the projects being worked on, and the sector autofills. So can work out costing per project as well as per sector. More definable variables.
+* Ability to change the month of the timesheets you are working on and push the current month data as an admin at the month end and then have a separate admin feature to edit beyond the end of the month.
 * Live reports page where you can work on old financial year totals as well as current year totals and comparisons.
  - Ability to compare the revenue coming in from a project, and the overhead costs currently incurred on it. Whether it be by variable rate or charge out rate.
  - Ability to see current profit projections based on work completed.
